@@ -55,5 +55,19 @@ namespace ShisokuEnzan
         {
             return new EnzanPoint(a.num * b.deno, a.deno * b.num);
         }
+
+        public static implicit operator float(EnzanPoint a)
+        {
+            int d = 7;
+            (BigInteger up, BigInteger lo) = a.ToRealNumber(d);
+            return ((float)up) + ((float)lo / (float)Math.Pow(10, d));
+        }
+
+        public static implicit operator double(EnzanPoint a)
+        {
+            int d = 17;
+            (BigInteger up, BigInteger lo) = a.ToRealNumber(d);
+            return ((double)up) + ((double)lo / Math.Pow(10, d));
+        }
     }
 }
