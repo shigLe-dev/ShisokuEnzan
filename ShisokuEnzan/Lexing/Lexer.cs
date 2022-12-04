@@ -1,11 +1,11 @@
-namespace ShisokuEnzan;
+namespace ShisokuEnzan.Lexing;
 
 internal class Lexer
 {
-    public readonly string code;
-    public char currentChar { get; private set; }
-    public char nextChar { get; private set; }
-    public int position { get; private set; }
+    private readonly string code;
+    private char currentChar;
+    private char nextChar;
+    private int position;
 
     public Lexer(string code)
     {
@@ -57,15 +57,15 @@ internal class Lexer
         return token;
     }
 
-    private bool IsDigit(char c) 
+    private bool IsDigit(char c)
     {
         return '0' <= c && c <= '9';
     }
 
     private void SkipWhiteSpace()
     {
-        while (currentChar == ' ' 
-            || currentChar == '\t' 
+        while (currentChar == ' '
+            || currentChar == '\t'
             || currentChar == '\r'
             || currentChar == '\n') ReadChar();
     }
