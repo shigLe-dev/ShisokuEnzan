@@ -15,7 +15,7 @@
 
         public string ToCode()
         {
-            return leftExpression.ToCode() + op + rightExpression.ToCode();
+            return "( " + leftExpression.ToCode() + " " + op + " " + rightExpression.ToCode() + " )";
         }
     }
 }
