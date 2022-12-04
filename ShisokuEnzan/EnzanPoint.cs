@@ -23,22 +23,35 @@ namespace ShisokuEnzan
             num = BigInteger.Parse(s);
         }
 
+        public (BigInteger up, BigInteger lo) ToRealNumber(int digit)
+        {
+            BigInteger up;
+            BigInteger lo;
+            BigInteger d = BigInteger.Pow(10, digit);
+            BigInteger r = num * d / deno;
+
+            up = r / d;
+            lo = r - up * d;
+
+            return (up, lo);
+        }
+
         public static EnzanPoint operator +(EnzanPoint a, EnzanPoint b)
         {
             return new EnzanPoint(a.num * b.deno + b.num * a.deno, a.deno * b.deno);
         }
 
-        public static EnzanPoint operator- (EnzanPoint a , EnzanPoint b)
+        public static EnzanPoint operator -(EnzanPoint a, EnzanPoint b)
         {
             return new EnzanPoint(a.num * b.deno - b.num * a.deno, a.deno * b.deno);
         }
 
-        public static EnzanPoint operator* (EnzanPoint a, EnzanPoint b)
+        public static EnzanPoint operator *(EnzanPoint a, EnzanPoint b)
         {
             return new EnzanPoint(a.num * b.num, a.deno * b.deno);
         }
 
-        public static EnzanPoint operator/ (EnzanPoint a, EnzanPoint b)
+        public static EnzanPoint operator /(EnzanPoint a, EnzanPoint b)
         {
             return new EnzanPoint(a.num * b.deno, a.deno * b.num);
         }
