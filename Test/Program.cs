@@ -11,6 +11,6 @@ var e3 = new EnzanPoint("1") / new EnzanPoint("3");
 Console.WriteLine(((float)e3).ToString("F39"));
 
 var e4 = new EnzanPoint("1") / new EnzanPoint("3");
-Console.WriteLine(((double)e3).ToString("F39"));
+Console.WriteLine(((double)e3).ToString("F80"));
 
 Enzan.Calc("(-5) * ((100 + 100.1) * + 5) / 10 + - 23.3");
