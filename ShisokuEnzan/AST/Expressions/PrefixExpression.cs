@@ -2,8 +2,8 @@
 {
     internal class PrefixExpression : IExpression
     {
-        readonly string op;
-        readonly IExpression expression;
+        public readonly string op;
+        public readonly IExpression expression;
 
         public PrefixExpression(string op, IExpression expression)
         {

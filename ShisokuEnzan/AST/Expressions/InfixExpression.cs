@@ -2,9 +2,9 @@
 {
     internal class InfixExpression : IExpression
     {
-        readonly string op;
-        readonly IExpression leftExpression;
-        readonly IExpression rightExpression;
+        public readonly string op;
+        public readonly IExpression leftExpression;
+        public readonly IExpression rightExpression;
 
         public InfixExpression(string op, IExpression leftExpression, IExpression rightExpression)
         {

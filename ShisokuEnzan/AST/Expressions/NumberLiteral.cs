@@ -2,7 +2,7 @@
 {
     internal class NumberLiteral : IExpression
     {
-        readonly string literal;
+        public readonly string literal;
 
         public NumberLiteral(string literal)
         {
