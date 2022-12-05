@@ -1,5 +1,18 @@
 ﻿using ShisokuEnzan;
 
-Enzan.Calc("(-5.)");
-Enzan.Calc("(100 * 100 / 0.3 - 41.3) / 12.1 + 141.2");
-Console.WriteLine((100d * 100d / 0.3d - 41.3d) / 12.1d + 141.2d);
+int digit = 10000;
+while (true)
+{
+	Console.Write(">>>");
+    string code = Console.ReadLine() ?? "";
+	try
+	{
+        EnzanPoint point = Enzan.Calc(code);
+		Console.WriteLine(point.num + " / " + point.deno);
+		Console.WriteLine(point.ToString(digit));
+    }
+	catch (Exception)
+	{
+
+	}
+}

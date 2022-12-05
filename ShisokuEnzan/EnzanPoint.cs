@@ -88,5 +88,14 @@ namespace ShisokuEnzan
             (BigInteger up, BigInteger lo) = a.ToRealNumber(d);
             return ((double)up) + ((double)lo / Math.Pow(10, d));
         }
+
+        public string ToString(int digit)
+        {
+            (var up, var lo) = ToRealNumber(digit);
+            if (lo == 0) return up.ToString();
+            return up.ToString() + "." + lo.ToString();
+        }
     }
 }
+
+
