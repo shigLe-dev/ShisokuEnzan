@@ -87,8 +87,9 @@ internal class Lexer
     private string ReadNumber()
     {
         string number = currentChar.ToString();
+        bool isDecimal = false;
 
-        while (IsDigit(nextChar) || nextChar == '.')
+        while (IsDigit(nextChar) || (isDecimal =( !isDecimal && nextChar == '.')))
         {
             number += nextChar;
             ReadChar();

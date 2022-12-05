@@ -1,16 +1,5 @@
 ﻿using ShisokuEnzan;
 
-var e = new EnzanPoint("1") / new EnzanPoint("3") - new EnzanPoint("100");
-Console.WriteLine(e.num + " " + e.deno);
-
-var e2 = new EnzanPoint("1") / new EnzanPoint("3");
-(var u, var l) = e2.ToRealNumber(10);
-Console.WriteLine(u + " " + l);
-
-var e3 = new EnzanPoint("1") / new EnzanPoint("3");
-Console.WriteLine(((float)e3).ToString("F39"));
-
-var e4 = new EnzanPoint("1") / new EnzanPoint("3");
-Console.WriteLine(((double)e3).ToString("F80"));
-
-Enzan.Calc("(-5) * ((100 + 100.1) * + 5) / 10 + - 23.3");
+Enzan.Calc("(-5.)");
+Enzan.Calc("(100 * 100 / 0.3 - 41.3) / 12.1 + 141.2");
+Console.WriteLine((100d * 100d / 0.3d - 41.3d) / 12.1d + 141.2d);

@@ -1,4 +1,4 @@
-namespace ShisokuEnzan;
+namespace ShisokuEnzan.Lexing;
 
 internal class Token
 {

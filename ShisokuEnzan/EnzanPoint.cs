@@ -20,7 +20,26 @@ namespace ShisokuEnzan
 
         public EnzanPoint(string s)
         {
+            string[] strings = s.Split('.');
+            if (strings.Length == 2)
+            {
+                BigInteger up = BigInteger.Parse(strings[0]);
+                BigInteger lo = BigInteger.Parse(strings[1] == "" ? "0" : strings[1]);
+                int length = strings[1].Length;
+                BigInteger h = BigInteger.Pow(new BigInteger(10), length);
+
+                up *= h;
+                num = up + lo;
+                deno = h;
+
+                return;
+            }
             num = BigInteger.Parse(s);
+        }
+
+        public EnzanPoint(long l)
+        {
+            num = l;
         }
 
         public (BigInteger up, BigInteger lo) ToRealNumber(int digit)
