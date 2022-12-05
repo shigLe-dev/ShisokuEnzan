@@ -13,8 +13,8 @@ while (true)
 		Console.WriteLine(point.num + " / " + point.deno);
 		Console.WriteLine(point.ToString(digit));
     }
-	catch (Exception)
+	catch (Exception e)
 	{
-
+		Console.WriteLine(e.Message);
 	}
 }
