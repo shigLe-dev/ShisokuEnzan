@@ -27,6 +27,9 @@ internal class Lexer
             case '-':
                 token = new Token(TokenType.MINUS, currentChar.ToString());
                 break;
+            case '%':
+                token = new Token(TokenType.REMAINDER, currentChar.ToString());
+                break;
             case '*':
                 token = new Token(TokenType.ASTERISK, currentChar.ToString());
                 break;

@@ -38,6 +38,7 @@ internal class Parser
     {
         {TokenType.PLUS, Precedence.SUM },
         {TokenType.MINUS, Precedence.SUM },
+        {TokenType.REMAINDER, Precedence.PRODUCT },
         {TokenType.ASTERISK, Precedence.PRODUCT },
         {TokenType.SLASH, Precedence.PRODUCT },
     };// óDêÊìx
@@ -72,6 +73,7 @@ internal class Parser
         {
             {TokenType.PLUS,  ParseInfixExpression},
             {TokenType.MINUS, ParseInfixExpression},
+            {TokenType.REMAINDER, ParseInfixExpression},
             {TokenType.ASTERISK,  ParseInfixExpression},
             {TokenType.SLASH, ParseInfixExpression}
         };
@@ -95,7 +97,7 @@ internal class Parser
 
         var leftExpression = prefix();
 
-        while (nextToken.type != TokenType.EOF 
+        while (nextToken.type != TokenType.EOF
             && precedence < nextPrecendence)
         {
             infixFunctions.TryGetValue(nextToken.type, out var infix);

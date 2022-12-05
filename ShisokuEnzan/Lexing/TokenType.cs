@@ -7,6 +7,7 @@ internal enum TokenType
     NUMBER, // êî
     PLUS, // +
     MINUS, // -
+    REMAINDER, // %
     ASTERISK, // *
     SLASH, // /
     LPAREN, // (
