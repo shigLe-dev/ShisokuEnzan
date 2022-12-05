@@ -1,6 +1,8 @@
 ﻿using ShisokuEnzan;
 
 int digit = 10000;
+EnzanPoint p = (new EnzanPoint(13) / new EnzanPoint(3)) % (new EnzanPoint(2) / new EnzanPoint(7));
+Console.WriteLine(p.num + " / " + p.deno);
 while (true)
 {
 	Console.Write(">>>");

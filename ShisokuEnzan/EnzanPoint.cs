@@ -75,6 +75,16 @@ namespace ShisokuEnzan
             return new EnzanPoint(a.num * b.deno, a.deno * b.num);
         }
 
+        public static EnzanPoint operator %(EnzanPoint a, EnzanPoint b)
+        {
+            EnzanPoint d = a / b;
+            BigInteger up = d.num;
+            BigInteger lo = d.deno;
+            BigInteger retUp = up % lo;
+            EnzanPoint ret1 = new EnzanPoint(retUp, lo);
+            return b * ret1;
+        }
+
         public static implicit operator float(EnzanPoint a)
         {
             int d = 7;
