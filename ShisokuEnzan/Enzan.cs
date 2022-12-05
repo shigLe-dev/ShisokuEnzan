@@ -5,7 +5,7 @@ namespace ShisokuEnzan;
 
 public static class Enzan
 {
-    public static double Calc(string code)
+    public static EnzanPoint Calc(string code)
     {
         Lexer lexer = new Lexer(code);
         Parser parser = new Parser(lexer);
